@@ -2,42 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Speech Synthesis</title>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="style.css">
+  <title>Text-to-Speech App</title>
 </head>
 <body>
+  <h1>Text to Speech</h1>
 
-    <div class="voiceinator">
+  <textarea id="text" rows="6" cols="50" placeholder="Enter text here..."></textarea><br><br>
 
-      <h1>The Voiceinator 5000</h1>
+  <label for="voice">Voice:</label>
+  <select id="voice"></select><br><br>
 
-      <select name="voice" id="voices">
-        <option value="">Select A Voice</option>
-      </select>
+  <label for="rate">Rate:</label>
+  <input type="range" id="rate" min="0.5" max="2" value="1" step="0.1">
+  <span id="rate-value">1</span><br><br>
 
-      <label for="rate">Rate:</label>
-      <input name="rate" type="range" min="0" max="3" value="1" step="0.1">
+  <label for="pitch">Pitch:</label>
+  <input type="range" id="pitch" min="0" max="2" value="1" step="0.1">
+  <span id="pitch-value">1</span><br><br>
 
-      <label for="pitch">Pitch:</label>
+  <button id="speak">Speak</button>
+  <button id="stop">Stop</button>
 
-      <input name="pitch" type="range" min="0" max="2" step="0.1">
-      <textarea name="text">Hello! I love JavaScript 👍</textarea>
-      <button id="stop">Stop!</button>
-      <button id="speak">Speak</button>
-
-    </div>
-
-<script>
-  const msg = new SpeechSynthesisUtterance();
-  let voices = [];
-  const voicesDropdown = document.querySelector('[name="voice"]');
-  const options = document.querySelectorAll('[type="range"], [name="text"]');
-  const speakButton = document.querySelector('#speak');
-  const stopButton = document.querySelector('#stop');
-
-  //Your code goes here
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
